@@ -41,7 +41,7 @@ compile:
     - GOOS=darwin GOARCH=amd64 go build -o $CI_PROJECT_DIR/build/${DARWIN_AMD64_BINARY} -ldflags="-X 'main.version=${CI_COMMIT_TAG}'" ./
     - GOOS=darwin GOARCH=arm64 go build -o $CI_PROJECT_DIR/build/${DARWIN_ARM64_BINARY} -ldflags="-X 'main.version=${CI_COMMIT_TAG}'" ./
     - GOOS=linux GOARCH=amd64 go build -o $CI_PROJECT_DIR/build/${LINUX_AMD64_BINARY} -ldflags="-X 'main.version=${CI_COMMIT_TAG}'" ./
-    - GOOS=linux GOARCH=arm64 go build -o $CI_PROJECT_DIR/build/${LINUX_ARM64_BINARY} -ldflags="-X 'main.version=${CI_COMMIT_TAG}'" ./
+    #- GOOS=linux GOARCH=arm64 go build -o $CI_PROJECT_DIR/build/${LINUX_ARM64_BINARY} -ldflags="-X 'main.version=${CI_COMMIT_TAG}'" ./
     - shasum -a 256 $CI_PROJECT_DIR/build/* > $CI_PROJECT_DIR/build/checksums.txt
   artifacts:
     paths:
